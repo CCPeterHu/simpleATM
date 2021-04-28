@@ -1,9 +1,9 @@
 public class UserAccount {
     private int balance = 0;
-    private String accountName;
+    private BankAccount ba;
 
-    public UserAccount(String cardHolader) {
-        this.accountName = cardHolader;
+    public UserAccount(BankAccount ba) {
+        this.ba = ba;
     }
     
     public void deposite(int amount){

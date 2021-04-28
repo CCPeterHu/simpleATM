@@ -1,6 +1,8 @@
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.smartcardio.Card;
+
 public class BankAccount extends Card{
     static Set<Card> accounts = new HashSet<>();
     private Card card;
@@ -14,8 +16,9 @@ public class BankAccount extends Card{
         return this.card.getPin();
     }
 
-    // add user account to bankaccount
-    public static void addBankAccount(Card card){
-        accounts.add(card);
+    // bind bank account to user account
+    public void addBankAccount(Card card){
+        UserAccount ua = new UserAccount(this);
+        accounts.add(ua);
     }
 }
